@@ -7,7 +7,7 @@
 
 import { useMemo } from "react";
 
-import { TrendingUp, DollarSign, Clock, Truck, ShieldAlert } from "lucide-react";
+import { TrendingUp, DollarSign, Clock, Truck } from "lucide-react";
 import type { FleetStats, TireRecord } from "../types";
 
 interface FleetTableProps {

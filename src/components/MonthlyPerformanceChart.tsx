@@ -16,7 +16,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   LabelList,
-  ReferenceLine
+
 } from "recharts";
 
 import { Calendar, Compass, ShieldAlert, Layers } from "lucide-react";
@@ -504,7 +504,7 @@ export default function MonthlyPerformanceChart({
                           fontSize={9}
                           fontWeight="bold"
                           offset={8}
-                          formatter={(val: number) => val ? val.toLocaleString("es-ES") : ""}
+                          formatter={(val) => typeof val === "number" ? val.toLocaleString("es-ES") : ""}
                         />
                       </Line>
                     );
@@ -527,7 +527,7 @@ export default function MonthlyPerformanceChart({
                       fontSize={11}
                       fontWeight="bold"
                       offset={10}
-                      formatter={(val: number) => val ? val.toLocaleString("es-ES") : ""}
+                      formatter={(val) => typeof val === "number" ? val.toLocaleString("es-ES") : ""}
                     />
                   </Line>
                 )}

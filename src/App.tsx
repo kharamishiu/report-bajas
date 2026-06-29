@@ -1,9 +1,7 @@
 
 
 import { useState, useMemo } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 import { SAMPLE_TIRES } from "./data";
 import FleetCharts from "./components/FleetCharts";
@@ -13,19 +11,18 @@ import MonthlyPerformanceChart from "./components/MonthlyPerformanceChart";
 import TireInspector from "./components/TireInspector";
 import SearchSettingsModal from "./components/SearchSettingsModal";
 import {
-  Wrench,
+
   Upload,
   RotateCcw,
   FileSpreadsheet,
   Filter,
   X,
   FileText,
-  Download,
+
   CheckCircle2,
   AlertCircle,
   TrendingUp,
-  Flame,
-  Globe,
+
   LayoutGrid,
   Calendar,
   Truck,

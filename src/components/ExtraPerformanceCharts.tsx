@@ -21,7 +21,7 @@ import {
   Line,
   LabelList
 } from "recharts";
-import { Calendar, Cpu, TrendingUp, Award, Layers, Zap, SlidersHorizontal } from "lucide-react";
+import { Calendar, Cpu, TrendingUp,  Layers, Zap, SlidersHorizontal } from "lucide-react";
 import type { TireRecord } from "../types";
 
 const AutonomyTooltip = ({ active, payload, label }: any) => {
@@ -402,9 +402,9 @@ export default function ExtraPerformanceCharts({ records }: ExtraPerformanceChar
     return [...modelPerformanceData].sort((a, b) => b["KM Promedio"] - a["KM Promedio"]);
   }, [modelPerformanceData]);
 
-  const modelsSortedByHrs = useMemo(() => {
+  /*const modelsSortedByHrs = useMemo(() => {
     return [...modelPerformanceData].sort((a, b) => b["Horas Promedio"] - a["Horas Promedio"]);
-  }, [modelPerformanceData]);
+  }, [modelPerformanceData]);*/
 
   // Dynamic vertical label for vertical bar charts inside bars
   const ExtraVerticalBarLabel = (props: any) => {
@@ -638,7 +638,7 @@ export default function ExtraPerformanceCharts({ records }: ExtraPerformanceChar
                         maxBarSize={45}
                       >
                         <LabelList dataKey="KM Promedio" content={<ExtraVerticalBarLabel />} />
-                        {modelsSortedByKm.map((entry, idx) => {
+                        {modelsSortedByKm.map((_, idx) => {
                           const colors = ["#06b6d4", "#0891b2", "#0e7490", "#115e59", "#134e4a"];
                           return <Cell key={`cell-${idx}`} fill={colors[idx % colors.length]} />;
                         })}

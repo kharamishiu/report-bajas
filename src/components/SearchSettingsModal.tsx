@@ -2,15 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  X, 
-  Settings, 
-  Calendar, 
-  Save, 
-  Trash2, 
-  Check, 
-  Sliders, 
-  Sparkles, 
+import {
+  X,
+  Settings,
+  Calendar,
+  Save,
+
+  Check,
+
   RotateCcw,
   AlertCircle
 } from "lucide-react";
@@ -54,13 +53,13 @@ export default function SearchSettingsModal({
   }, [isOpen, baseStartDate, baseEndDate, isBaseFilterActive]);
 
   // Extract min/max dates dynamically from dataset
-  const datasetDateRange = useEffect(() => {}, [tires]);
+  /*const datasetDateRange = useEffect(() => {}, [tires]);*/
 
   const { minDateStr, maxDateStr, minDateLabel, maxDateLabel } = (() => {
     const datesMs = tires
       .map((t) => parseDateStringToMs(t.fechaBaja))
       .filter((ms) => ms > 0);
-    
+
     if (datesMs.length === 0) {
       return { minDateStr: "", maxDateStr: "", minDateLabel: "N/A", maxDateLabel: "N/A" };
     }
@@ -91,8 +90,8 @@ export default function SearchSettingsModal({
   })();
 
   const applyPreset = (preset: "all" | "y2025" | "last6m" | "first6m") => {
-    const today = new Date();
-    
+    //const today = new Date();
+
     if (preset === "all") {
       setTempStart(minDateStr);
       setTempEnd(maxDateStr);
@@ -178,7 +177,7 @@ export default function SearchSettingsModal({
 
             {/* Content body */}
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
-              
+
               {/* Context info banner */}
               <div className="p-3.5 bg-slate-950 border border-slate-800/80 rounded-xl space-y-2">
                 <span className="text-[10px] text-indigo-400 font-mono uppercase tracking-wider block">
@@ -209,14 +208,12 @@ export default function SearchSettingsModal({
                 <button
                   type="button"
                   onClick={() => setTempActive(!tempActive)}
-                  className={`w-12 h-6.5 rounded-full p-1 transition-all duration-200 cursor-pointer ${
-                    tempActive ? "bg-indigo-600" : "bg-slate-800"
-                  }`}
+                  className={`w-12 h-6.5 rounded-full p-1 transition-all duration-200 cursor-pointer ${tempActive ? "bg-indigo-600" : "bg-slate-800"
+                    }`}
                 >
                   <div
-                    className={`w-4.5 h-4.5 rounded-full bg-white transition-all duration-200 ${
-                      tempActive ? "translate-x-5.5" : "translate-x-0"
-                    }`}
+                    className={`w-4.5 h-4.5 rounded-full bg-white transition-all duration-200 ${tempActive ? "translate-x-5.5" : "translate-x-0"
+                      }`}
                   />
                 </button>
               </div>
@@ -341,13 +338,12 @@ export default function SearchSettingsModal({
                   type="button"
                   onClick={handleSave}
                   disabled={tempStart && tempEnd && tempStart > tempEnd ? true : false}
-                  className={`px-4.5 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md ${
-                    tempStart && tempEnd && tempStart > tempEnd
+                  className={`px-4.5 py-2 rounded-lg font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md ${tempStart && tempEnd && tempStart > tempEnd
                       ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/50 shadow-none"
                       : saveSuccess
-                      ? "bg-emerald-500 text-slate-950 font-bold shadow-emerald-500/10"
-                      : "bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-600/15"
-                  }`}
+                        ? "bg-emerald-500 text-slate-950 font-bold shadow-emerald-500/10"
+                        : "bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-600/15"
+                    }`}
                 >
                   {saveSuccess ? (
                     <>

@@ -7,7 +7,7 @@
 
 import { useState } from "react";
 
-import { Brain, FileText, Printer, Loader2, RefreshCw, ChevronRight, Check } from "lucide-react";
+import { Brain, FileText, Printer, Loader2, RefreshCw, ChevronRight } from "lucide-react";
 import Markdown from "react-markdown";
 import type { TireRecord } from "../types";
 

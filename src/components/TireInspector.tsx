@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect } from "react";
 import { 
   Calendar, 
   Search, 
-  Tag, 
+
   Settings, 
   Activity, 
   AlertTriangle, 
@@ -90,12 +90,12 @@ function parseRecordDate(dateStr?: string): Date | null {
 }
 
 // Extracted helper for formatting dates to YYYY-MM-DD for standard input fields
-function dateToInputString(d: Date): string {
+/*function dateToInputString(d: Date): string {
   const year = d.getFullYear();
   const month = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
-}
+}*/
 
 export default function TireInspector({ records }: TireInspectorProps) {
   const [selectedMonth, setSelectedMonth] = useState<string>("TODOS");

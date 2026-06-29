@@ -20,7 +20,7 @@ import {
   PieChart,
   Pie
 } from "recharts";
-import { LayoutGrid, BarChart3, PieChartIcon, Award, Calendar, Filter } from "lucide-react";
+import { LayoutGrid, BarChart3, Award, Calendar, Filter } from "lucide-react";
 import type { TireRecord } from "../types";
 
 interface FleetChartsProps {
@@ -157,7 +157,7 @@ export default function FleetCharts({ records }: FleetChartsProps) {
       const count = fleetRecords.length;
       const hoursSum = fleetRecords.reduce((sum, r) => sum + r.hrsTotales, 0);
       const hoursAvg = count > 0 ? hoursSum / count : 0;
-      const costSum = fleetRecords.reduce((sum, r) => sum + r.costoTotal, 0);
+      //const costSum = fleetRecords.reduce((sum, r) => sum + r.costoTotal, 0);
       const lossSum = fleetRecords.reduce((sum, r) => sum + r.perdidaUsd, 0);
 
       // Counts of reasons for decommissioning
@@ -354,7 +354,7 @@ export default function FleetCharts({ records }: FleetChartsProps) {
               />
               <Legend verticalAlign="top" height={36} wrapperStyle={{ color: "#94a3b8", fontSize: "12px" }} />
               <Bar dataKey="Promedio de Horas" fill="#14b8a6" radius={[4, 4, 0, 0]}>
-                {fleetData.map((entry, index) => (
+                {fleetData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={CHART_COLORS[index % CHART_COLORS.length]} />
                 ))}
               </Bar>
@@ -376,7 +376,7 @@ export default function FleetCharts({ records }: FleetChartsProps) {
               />
               <Legend verticalAlign="top" height={36} wrapperStyle={{ color: "#94a3b8", fontSize: "12px" }} />
               <Bar dataKey="Horas Totales" fill="#3b82f6" radius={[4, 4, 0, 0]}>
-                {fleetData.map((entry, index) => (
+                {fleetData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={CHART_COLORS[(index + 2) % CHART_COLORS.length]} />
                 ))}
               </Bar>
