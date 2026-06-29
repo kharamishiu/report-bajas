@@ -6,7 +6,7 @@ import './App.css'
 import { SAMPLE_TIRES } from "./data";
 import FleetCharts from "./components/FleetCharts";
 import ExtraPerformanceCharts from "./components/ExtraPerformanceCharts";
-import AIAnalysis from "./components/AIAnalysis";
+//import AIAnalysis from "./components/AIAnalysis";
 import MonthlyPerformanceChart from "./components/MonthlyPerformanceChart";
 import TireInspector from "./components/TireInspector";
 import SearchSettingsModal from "./components/SearchSettingsModal";
