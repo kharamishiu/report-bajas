@@ -563,8 +563,9 @@ function App() {
                 {/* New Requested Performance Charts (Autonomy and Tire Model performance with month multi-filter) */}
                 <ExtraPerformanceCharts records={filteredTires} />
 
-                {/* AI report section */}
+                {/* AI report section 
                 <AIAnalysis records={filteredTires} />
+                */}
               </>
             ) : (
               <>
